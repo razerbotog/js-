@@ -51,3 +51,30 @@ let randomNumber = 56;
 let stringNumber = String(randomNumber);
 console.table([randomNumber, stringNumber]);
 console.table([typeof(randomNumber), typeof(stringNumber)]);
+
+// *********** operations ***********
+console.log(2+4);
+console.log(2-4);
+console.log(2/4);
+console.log(2%4);
+console.log(2*4);
+console.log(2**5); // 32
+console.log(3 + 4 + "6"); // "76"
+console.log("3" + 4 + 6); // "345"
+console.log(typeof(3 + 4 + "6")); //string
+console.log(+true); // dont use this; bad practice
+console.log(+""); // dont use this; bad practice
+
+let level = 100;
+level++;
+console.log(level);
+
+let incrementNo = 3;
+let incrementNo2 = incrementNo++;
+let incrementNo3 = +incrementNo;
+console.table([incrementNo, incrementNo2, incrementNo3]);
+
+// notes
+/* If used postfix, with operator after operand (for example, x++), the increment operator increments and returns the value before incrementing.
+
+If used prefix, with operator before operand (for example, ++x), the increment operator increments and returns the value after incrementing. */
