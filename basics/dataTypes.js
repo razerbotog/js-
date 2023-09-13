@@ -6,7 +6,7 @@ let place = "" //string
 let age = 22 //number
 let isLoggedIn = false //boolean
 let x = BigInt("123456789012345678901234567890"); //BigInt
-let y = null //standalone value 
+let y = null //standalone value ; it means empty only empty
 let z; // undefined
 
 const sym1 = Symbol(); //symbol //that's guaranteed to be unique
