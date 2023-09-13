@@ -6,12 +6,14 @@ let place = "" //string
 let age = 22 //number
 let isLoggedIn = false //boolean
 let x = BigInt("123456789012345678901234567890"); //BigInt
+let biginteger = 123456789012345678901234567890n; //BigInt
 let y = null //standalone value ; it means empty only empty
 let z; // undefined
 
 const sym1 = Symbol(); //symbol //that's guaranteed to be unique
 const sym2 = Symbol("foo"); //symbol //that's guaranteed to be unique
-
+const sym3 = Symbol("foo"); //symbol //that's guaranteed to be unique
+console.log(sym2 == sym3); // false 
 const person = {firstName:"John", lastName:"Doe"}; // Object
 
 const cars = ["Saab", "Volvo", "BMW"]; // Array object
