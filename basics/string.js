@@ -5,6 +5,7 @@ console.log(name + " " + repoCount + " " + "repo"); //string concatenation but d
 console.log(`In ${name.toUpperCase()}'s github, there is ${repoCount} repo`); //template literal allow us to use string interpolation.prefer this for concatenation.
 
 const gameName = new String("Arif-Akhtar-com");
+console.log(gameName); // [String: 'Arif-Akhtar-com']
 console.table([gameName[0], gameName[1], gameName[2], gameName[3],]);// consoling value using key like [0],[1]
 console.log(gameName.__proto__); // output is object "{}"; it contains many info. 
 console.log(gameName.length);
