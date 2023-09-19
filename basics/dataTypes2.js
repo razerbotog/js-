@@ -1,4 +1,4 @@
-//primitive
+//primitive;Primitive values are immutable (they are hardcoded and cannot be changed).
 // 7 types: string,number,boolean,null,undefined,symbol,bigInt
 
 // reference (non-primitive)
