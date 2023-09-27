@@ -63,6 +63,11 @@ const walletAmount = 200;
 if (userLoggedIn && debitCard){
     console.log("&&: Allowed to buy courses") ; //&&: Allowed to buy courses
 }
+if (userLoggedIn && debitCard && 2 == 3){
+    console.log("Allowed to buy courses") ;
+} else {
+    console.log("one condition didn't match"); //one condition didn't match
+}
 if (debitCard || walletAmount) {
     console.log("OR: Allowed to buy courses"); // OR: Allowed to buy courses
 }
