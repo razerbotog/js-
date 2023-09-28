@@ -25,3 +25,14 @@ switch (month) {
         console.log('No Case');
         break;
 }
+
+
+let key = 'Arif';
+switch(key){
+case 'Arif0':
+    console.log('Arif0')
+    break;
+case 'Arif':
+    console.log('Arif') // Arif
+    break;
+}

@@ -19,3 +19,10 @@
 // ===
 // !==
 // 1 + 2 , the + sign is an operator and 1 is left side operand and 2 is right side operand.
+
+
+// Nullish coalescing Operator (??)
+let val1;
+val1 = 5 ?? 10 // 5
+val1 = null ?? 10 // 10
+console.log(val1);
