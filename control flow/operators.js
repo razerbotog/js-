@@ -25,4 +25,12 @@
 let val1;
 val1 = 5 ?? 10 // 5
 val1 = null ?? 10 // 10
+val1 = undefined ?? 15 //15
+val1 = null ?? 10 ?? 20 //10 ; first value chose
 console.log(val1);
+
+//ternary operator
+//condition ? true : false
+const cup = 100;
+cup >= 100 ? console.log("Its right"):console.log("Its Wrong"); // Its right
+cup <= 90 ? console.log("Its right"):console.log("Its Wrong"); //Its Wrong
