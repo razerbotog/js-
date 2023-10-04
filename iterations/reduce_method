@@ -15,3 +15,26 @@ console.log(myNums2);
 //in single line
 let initialvalue = 0; // this value will be acclumator once
 const myNums3 = myNums.reduce((accumulator, currentvalue) => accumulator + currentvalue, 0)
+
+// total amount of a cart
+const shoppingCart = [
+    {
+        item: "js course",
+        price: 2999
+    },
+    {
+        item: "py course",
+        price: 999
+    },
+    {
+        item: "mobile dev course",
+        price: 5999
+    },
+    {
+        item: "data science course",
+        price: 12999
+    }
+]
+
+let total = shoppingCart.reduce((acc, nestedObj) => acc + nestedObj.price, 0);
+console.log(total); // 22996
