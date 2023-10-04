@@ -39,8 +39,8 @@ const obj3 = {obj1, obj2};//
 console.log(obj3);//{ obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } }
 
 const obj4 = Object.assign(obj1, obj2) // 1st parameter is target and rest are all source.This method return the version with all source inside target 
-console.log(obj4);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' } // changed the original variable too
-console.log(obj1);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+console.log(obj4);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+console.log(obj1);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' } // changed the original variable too
 
 const obj5 = Object.assign({}, obj1, obj2)
 console.log(obj5);//{ '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
