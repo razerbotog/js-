@@ -1,0 +1,17 @@
+const myNums = [1, 2, 3]
+
+const myNums2 = myNums.reduce((accumulator, currentvalue) => {
+    console.log("accumulator:", accumulator, "currentvalue:", currentvalue);
+    return accumulator + currentvalue;
+}, 0)
+
+console.log(myNums2);
+// output is
+// accumulator: 0 currentvalue: 1
+// accumulator: 1 currentvalue: 2
+// accumulator: 3 currentvalue: 3
+// 6
+
+//in single line
+let initialvalue = 0; // this value will be acclumator once
+const myNums3 = myNums.reduce((accumulator, currentvalue) => accumulator + currentvalue, 0)
