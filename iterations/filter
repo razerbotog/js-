@@ -1,0 +1,87 @@
+// foreach dont return value
+const coding = ["js", "ruby", "java", "python", "cpp"];
+
+const values = coding.forEach((item) => {
+    console.log(item);
+    // return item
+});
+console.log(values); // undefined in both case log and return
+// --------
+
+
+
+
+// using filter() to return value
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+//in single line
+const myNums1 = myNums.filter((num) => num > 5);
+console.log(myNums1); // [ 6, 7, 8, 9, 10 ]
+
+//in multiple line
+const myNums2 = myNums.filter((num) =>{
+    return num > 5
+})
+console.log(myNums2); // [ 6, 7, 8, 9, 10 ]
+
+//-------------
+
+// using push() to empty array in foreach to store return value 
+const myArr = [];
+myNums.forEach((num) => {
+    if (num > 4) {
+       myArr.push(num)
+    }
+})
+console.log(myArr) // [ 5, 6, 7, 8, 9, 10 ]
+
+//-------------
+
+const books = [
+    {title: "BOOK 1", genre:"Fiction", publish: 1981, edition:2004},
+    {title: "BOOK 2", genre:"Non-Fiction", publish: 1992, edition:2008},
+    {title: "BOOK 3", genre:"History", publish: 1999, edition:2007},
+    {title: "BOOK 4", genre:"Non-Fiction", publish: 1989, edition:2010},
+    {title: "BOOK 5", genre:"Science", publish: 2009, edition:2014},
+    {title: "BOOK 6", genre:"Fiction", publish: 1987, edition:2010},
+    {title: "BOOK 7", genre:"History", publish: 1986, edition:1996},
+    {title: "BOOK 8", genre:"Science", publish: 2011, edition:2016},
+    {title: "BOOK 9", genre:"Non-Fiction", publish:1981, edition: 1989}
+]
+
+const userBooks = books.filter((filterBooks) => filterBooks.genre === "History")
+console.log(userBooks);
+/*output
+[
+    { title: 'BOOK 3', genre: 'History', publish: 1999, edition: 2007 },
+  { title: 'BOOK 7', genre: 'History', publish: 1986, edition: 1996 }
+]
+
+*/
+const userBooks1 = books.filter((filterBooks) => filterBooks.genre === "Non-Fiction")
+// const userBooks1 = books.filter((filterBooks) => {return filterBooks.genre === "Non-Fiction"})
+console.log(userBooks1);
+/*output
+[
+    {
+      title: 'BOOK 2',
+      genre: 'Non-Fiction',
+      publish: 1992,
+      edition: 2008
+    },
+    {
+      title: 'BOOK 4',
+      genre: 'Non-Fiction',
+      publish: 1989,
+      edition: 2010
+    },
+    {
+      title: 'BOOK 9',
+      genre: 'Non-Fiction',
+      publish: 1981,
+      edition: 1989
+    }
+  ]
+  */
+ const userBooks2 = books.filter((filterBooks) => {return filterBooks.publish >= 1995 && filterBooks.genre == "History"});
+ console.log(userBooks2); // [ { title: 'BOOK 3', genre: 'History', publish: 1999, edition: 2007 } ]
