@@ -6,8 +6,8 @@ const course = {
 console.log(course.courseInstructor); //Arif
 
 // object Destructring
-const {courseInstructor} = course;
-const {courseInstructor: instructor} = course;
+const {courseInstructor} = course; //a basic destructuring
+const {courseInstructor: instructor} = course; //both courseInstructor and instructor variables are created with the value "Arif".
 console.log(courseInstructor); //Arif
 console.log(instructor); //Arif
 
