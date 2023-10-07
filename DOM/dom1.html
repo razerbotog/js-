@@ -1,1 +1,37 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM lerning</title>
+</head>
+<body>
+    
+    <script>
+        let div = document.createElement("div")
+        console.log(div);
+        div.classList = "main"
+        div.className = "main"
+        div.id = Math.round(Math.random() * 5 + 1);
+        
+        div.setAttribute("title", "this is title of this div");
+        div.style.backgroundColor = 'black';
+        div.style.color = 'green';
+        div.style.padding = "2px 10px 20px"
+
+        // div.innerText = "text"; // this way overwrite the existed text
+        // this way more optimise to set inner text bcoz this way dont overwrite so it minimise the process in BTS
+        const addtextnnode = document.createTextNode('text2') // create a new node in document
+        div.appendChild(addtextnnode)
+        document.body.appendChild(div)
+
+
+
+
+        // so we made create element
+        //now we can wrap this in function pass any argumenets
+        // or we can loop in method or pass any argumenets
+    </script>
+</body>
+</html>
