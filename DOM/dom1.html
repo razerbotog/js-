@@ -1,37 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM lerning</title>
+    <title>Document</title>
+    <style>
+        body {
+            background: #2f3650;
+        }
+    </style>
 </head>
 <body>
-    
-    <script>
-        let div = document.createElement("div")
-        console.log(div);
-        div.classList = "main"
-        div.className = "main"
-        div.id = Math.round(Math.random() * 5 + 1);
-        
-        div.setAttribute("title", "this is title of this div");
-        div.style.backgroundColor = 'black';
-        div.style.color = 'green';
-        div.style.padding = "2px 10px 20px"
-
-        // div.innerText = "text"; // this way overwrite the existed text
-        // this way more optimise to set inner text bcoz this way dont overwrite so it minimise the process in BTS
-        const addtextnnode = document.createTextNode('text2') // create a new node in document
-        div.appendChild(addtextnnode)
-        document.body.appendChild(div)
-
-
-
-
-        // so we made create element
-        //now we can wrap this in function pass any argumenets
-        // or we can loop in method or pass any argumenets
-    </script>
+    <div class="hero" id="hero">
+        <h1 class="heading1" id="heading1">DOM Learning <span style="display: none;">Display None</span></h1>
+        <h1 class="heading1" id="heading2">DOM Learning <span style="display: none;">Display None</span></h1>
+        <p class="lorem">Lorem ipsum dolor sit amet.</p>
+        <p class="lorem">Lorem ipsum dolor sit amet.</p>
+        <input type="password">
+        <ul>
+            <li class="list-item">green</li>
+            <li class="list-item">red</li>
+            <li class="list-item">blue</li>
+            <li class="list-item">black</li>
+        </ul>
+    </div>
 </body>
 </html>
+
+
+
+<!--
+console.log(document) ✅
+console.log(window.document) ✅
+console.dir(window.document) ✅
+ -->
+
+<!-- document.querySelector("h1");
+document.querySelector("#hero");
+document.querySelector(".hero");
+
+document.querySelectorAll("h1"); -->
+
+<!-- document.getElementById("hero");
+document.getElementById("hero").id;
+document.getElementById("hero").className;
+document.getElementById("hero").classList; -->
+<!-- document.getElementById("hero").getAttribute("class") -->
+
+<!-- document.getElementsByClassName("hero") -->
+<!-- document.getElementsByClassName("heading1")[1]
+document.getElementsByClassName("heading1")[1].id
+document.getElementsByClassName("heading1")[1].className
+document.getElementsByClassName("heading1")[1].classList
+document.getElementsByClassName("hero")[0].getAttribute("class") -->
+
+<!-- document.getElementsByTagName("h1")[0].innerText
+'DOM Learning'
+document.getElementsByTagName("h1")[0].textContent
+'DOM Learning Display None'
+document.getElementsByTagName("h1")[0].innerHTML -->
+
+<!-- document.getElementById("hero").style.backgroundColor = "red"; -->
+
+<!-- document.querySelector("input")
+<input type=​"password">​
+document.querySelector('input[type="password"]')
+<input type=​"password">​ -->
+<!-- document.querySelectorAll('p:first-child') -->
+
+
+<!-- document.getElementsByClassName("list-item")
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollection
+document.querySelectorAll(".list-item")
+NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item] -->
+
+
+<!-- //ussing foreach in nodelist -->
+<!-- const nlist = document.querySelectorAll(".list-item");
+undefined
+nlist.forEach((i) => i.style.color = "red") -->
+
+<!-- //ussing foreach in HTMLcollection -->
+<!-- const hcollection = document.getElementsByClassName("list-item");
+undefined
+hcollection
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+let myarray = Array.from(hcollection)
+undefined
+myarray
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+myarray.forEach((i) => {
+    i.style.color = "green";
+  i.style.backgroundColor = "black";  
+}) -->
