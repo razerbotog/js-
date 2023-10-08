@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D0M learning</title>
+    <style>
+        body {
+            color: #fff;
+            background-color: #121212;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    <script>
+        // create a function to add element
+        function addLanguage(language){
+            // create a li
+            const li = document.createElement("li");
+            // give properties
+            li.style.color = "blue"; // Fixed the typo here
+            li.innerHTML = `${language}`;
+            // appendChild
+            document.querySelector(".language").appendChild(li);
+        }
+        addLanguage("java");
+        addLanguage("cpp");
+
+        //another way 
+        // more optimize function to add element; 
+        function addLanguage1(language){
+            const li = document.createElement("li")
+            li.appendChild((document.createTextNode(`${language}`)));
+            document.querySelector(".language").appendChild(li)
+        }
+        addLanguage1("golang")
+
+        // Edit element
+        const secondLi = document.querySelector("li:nth-child(2)")
+        // secondLi.innerHTML = 'Phython'
+        const editedLi = document.createElement('li')
+                editedLi.innerText = 'Ruby';
+                secondLi.replaceWith(editedLi)
+                
+        // Edit element
+        // const firstLi = document.querySelector("li:nth-child(0)");// WONT WORK ; :nth-child selector uses 1-based indexing, not 0-based.
+        const firstLi = document.querySelector("li:first-child");
+        // firstLi.innerHTML = 'Typescript'
+                firstLi.outerHTML = '<li>Typescript</li>'
+        
+
+        //remove  element
+        const lastLi = document.querySelector("li:last-child")
+        lastLi.remove()
+    </script>
+</body>
+</html>
