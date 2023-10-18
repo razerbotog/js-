@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <!-- <li><img onclick="alert('owl')" width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li> -->
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: rgb(15, 18, 20);" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script> 
+    
+
+    //Notes
+    // Avoid inline events in vanila js.will be a problem when scaling up.
+    // Use event listeners instead.
+    // Event listeners are more flexible and can be removed.
+    // Event listeners can be added to multiple elements.
+
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl');
+    // }
+    // This approach has own limits too regarding flexible features
+     //attachEvent() for internet explorer instead of addEventListener() in earlier days
+    // oonevent in jQuery 
+
+    // best appproach till now 
+
+    // document.getElementById('owl').addEventListener("click", function(event){
+    //     alert("AddeventListener")
+    //     console.log(event);
+    // }, false)
+
+    // topics of event 
+    //type, timestamp, defaultPrevented (preventDefault)
+    //clientX, clientY, screenX, screeny
+    //altkey, ctrlkey, shiftkey, keycode
+    
+     // --------xxxxx----------------
+
+    // true and false in event propagation; by default false and bubbling if we dont even mention false
+    // event propagation has two context event bubbling & event capturing
+
+    //  document.getElementById('images').addEventListener("click", function(event){
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById('owl').addEventListener("click", function(event){
+    //     console.log("owl clicked")
+    // }, false)
+
+    // owl will be log first then ul because its a bubbling propagation 
+    // owl clicked
+    // clicked inside the ul
+
+        // now if we set true .means capturing context 
+    // document.getElementById('images').addEventListener("click", function(event){
+    //     console.log("clicked inside the ul")
+    // }, true)
+
+    // document.getElementById('owl').addEventListener("click", function(event){
+    //     console.log("owl clicked")
+    // }, true)
+
+    // In this case
+    // ul will be log first then owl because its a capturing propagation 
+    // clicked inside the ul
+    // owl clicked
+    
+     // --------xxxxx----------------
+
+    //  we can stop default propagation too  
+    // document.getElementById('images').addEventListener("click", function(event){
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById('owl').addEventListener("click", function(event){
+    //     console.log("owl clicked")
+    //     event.stopPropagation() // to stop the propagation
+    // }, false)
+    // log will just owl clicked
+    
+    // same goes here by applying stopPropagation() 
+    // document.getElementById('images').addEventListener("click", function(event){
+    //     console.log("clicked inside the ul")
+    // event.stopPropagation()
+    // }, true)
+
+    // document.getElementById('owl').addEventListener("click", function(event){
+    //     console.log("owl clicked")
+    // }, true)
+    // log will just clicked inside the ul
+     // --------xxxxx----------------
+
+
+    //  document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //  }, false)
+
+    document.getElementById('images').addEventListener('click', function(e){
+        // console.log(e);
+        // console.log(e.target.parentNode);
+        // console.log(e.target.parentElement); // we can acess parent like this too
+        // e.target.parentElement.remove()
+
+        let removeIt = e.target.parentNode
+        // removeIt.remove()
+
+        // another way to do it
+        // removeIt.parentNode.removeChild(removeIt)
+        // but in this way if we click in li then whole ul will get remove so we have too put some chechkpoints
+
+        // by using checkpoints using tagName
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG"){
+            removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+</script>
+</html>
