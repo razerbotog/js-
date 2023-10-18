@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async project</title>
+</head>     
+<body>
+    <h1>Async JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout & setInterval
+    //takes handler as a argument
+
+    // setTimeout(function() {
+    //     console.log("Logging set timeout");
+    // }, 2000);
+    // setInterval(function() {
+    //     console.log("Logging set interval");
+    // }, 2000);
+
+    // assigned a handler to a variable
+    // const log = function() {
+    //     console.log("Logging set timeout");
+    // }
+    // setTimeout(log, 2000)
+    
+    //
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Async javascipt"
+    }
+   const changeH1 = setTimeout(changeText, 5000);
+
+    //clearTimeout
+    document.querySelector('#stop').addEventListener("click", function(){
+        clearTimeout(changeH1);
+        console.log("log stoped");
+    })
+
+   
+</script>
+</html>
