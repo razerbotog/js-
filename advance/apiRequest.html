@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API XMLHttpRequest</title>
+    <style>
+        body{
+            background-color: rgb(32, 22, 22);
+        }
+    </style>
+</head>
+<body>
+ 
+    <script>
+        // XMLHttpRequest(XHR) is used to make request to server
+        // XHR is used heavily in AJAX programming
+        // XHR is used to make request to server without reloading the page
+        // XHR is used to make request to server in background
+        // XHR is used to make request to server without disturbing the user
+        //Before fetch() XMLHttpRequest(XHR) were used
+        //XHR used heavily in AJAX programming
+
+        //state were used before async await.
+        // ------------
+
+
+        const xhr = new XMLHttpRequest(); // objects to interact with servers.
+        const requestUrl = "https://api.github.com/users/razerbotog#"
+        xhr.open("GET", requestUrl) //is to call
+        // console.log(xhr.readyState); //track once only
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState === 4) {
+                // console.log("xhr.responseText", xhr.responseText); // responseText ;Returns response as text.
+                // or by using this
+                // console.log(this.responseText); // this is using for searching in this context
+                const data = this.responseText;
+                const dataJson = JSON.parse(data); // to convert string to json
+                console.log(data.followers); // we cant access this bcoz data is in string type ,most of the time
+                console.log(dataJson.followers);
+            }   
+        }// to track continuously
+        xhr.send() // is to send the call
+        //console.log(xhr.readyState); //track once only
+        console.log("we are here");
+
+
+        // js runs in v8 engine made with c++
+        // v8 engine provide some api access, debugging tools like console,
+    </script>
+</body> 
+</html>
