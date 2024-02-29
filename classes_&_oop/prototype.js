@@ -14,14 +14,14 @@ let heroPower = {
         console.log(`Spider-Man's power is ${this.spiderman}`);
     }
 }
-heroPower.getSpiderPower();
+heroPower.getSpiderPower(); //Spider-Man's power is sling
 
 // adding new function to that object
 heroPower.getThorPower = function () {
     console.log(`Thor power is  ${this.thor}`);
 }
 
-heroPower.getThorPower()
+heroPower.getThorPower() //Thor power is  hammer
 
 // adding new function/property in object prototype.which can be access in evrywhere. as a reminder js is protype language which have inherit behaviour
 Object.prototype.arif = function() {
